@@ -1,5 +1,6 @@
 package ro.sda.java57.restapi.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ public class HelloController {
     }
 
     @PostMapping("/user")
-    public ResponseEntity<String> testUser(@RequestBody User user){
+    public ResponseEntity<String> testUser(@Valid @RequestBody User user){
         return ResponseEntity.ok("Hello from " + user);
     }
 
